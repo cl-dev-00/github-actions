@@ -10,6 +10,6 @@ jobs:
     - name: checkout
       uses: actions/checkout@v4
     - name: Define variable
-      uses: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
+      run: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
     - name: run script
       run: python hola_mundo.py
