@@ -1,0 +1,15 @@
+name: workflow test 1
+run-name: learning github actions
+
+on: [push]
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+    - name: checkout
+      uses: actions/checkout@v4
+    - name: Define variable
+      uses: echo "USERNAME=${{ github.actor }}" >> $GITHUB_ENV
+    - name: run script
+      run: python hola_mundo.py
